@@ -8,7 +8,29 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = function (tanggal,index) {
+  let dataYangAkandiUbah = tanggal;
+  let posisiData = index;
+  const JumlahDataTanggal = dataYangAkandiUbah.length;
+  datadalamdetik = [];
+
+  for (let i = 0; i < JumlahDataTanggal; i++) {
+    const dataDalamMiliSecond = Date.parse(dataYangAkandiUbah[i]);
+    msInteger= parseInt(dataDalamMiliSecond);
+    ubahkeDetik= msInteger/1000;
+    msToSecond=ubahkeDetik.toString();
+    datadalamdetik.push(msToSecond);
+  }
+
+  if(index==null){
+    datadalamdetik.sort();
+    return datadalamdetik;
+  }
+  else if (index!=null){
+    return datadalamdetik[index];
+  }
+
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
